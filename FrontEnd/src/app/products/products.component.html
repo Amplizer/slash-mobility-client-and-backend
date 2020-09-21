@@ -1,0 +1,9 @@
+<div *ngFor="let product of products; let i = index;" class="product">
+  <div class="product-image" [ngStyle]="{ 'background-image' : utilGetSrc( product ) }">
+    <label> {{ product.name }} </label>
+  </div>
+  <div class="product-price">
+      <label>{{ product.price }}{{ product.countryCurrency.alias }}</label>
+  </div>
+  <button id="{{ product.id }}" (click)="buyProductShowModal($event)" class="product-buy"> BUY </button>
+</div>

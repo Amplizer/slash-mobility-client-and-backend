@@ -1,0 +1,59 @@
+$product_separator_heigth: 20px;
+$product_img_max_width: 240px;
+
+.product
+    display: inline-block
+    max-width: $product_img_max_width
+
+.product-image
+    background-repeat: no-repeat
+    display: flex
+    align-content: center
+    align-items: center
+    justify-content: center
+    background-repeat: no-repeat
+    background-position-x: center
+    min-height: 320px
+    max-width: $product_img_max_width
+
+.product-separator
+    width: 100%
+    height: $product_separator_heigth
+    display: block;
+
+.product-price
+    background-color: #DDDDDD
+    color: black
+    font-weight: bold
+    font-size: 14px
+    height: 80px
+    display: flex
+    align-content: center
+    align-items: center
+    justify-content: center
+
+.product-buy
+    background-color: black
+    color: white
+    width: 100%
+    border: none
+    max-width: $product_img_max_width
+    padding: 12px
+    font-weight: bold
+
+/* MEDIA SCREEN */
+
+// Creating media screen values for differents screen resolutions. Defaults values on position 4
+$screen_sizes: 1200px 992px 768px;
+$product_width: calc(50% - 24px ) calc(50% - 24px ) calc(100% - 24px ) calc(25% - 24px )
+
+.product
+    width: nth( $product_width, 4 )
+    margin: 12px 12px 24px 12px
+
+@for $i from 1 through length($screen_sizes)
+    @media screen and ( max-width: nth($screen_sizes, $i) )
+        .product
+            width: nth( $product_width, $i )
+
+/* ------------ */

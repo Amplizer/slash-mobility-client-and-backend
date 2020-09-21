@@ -1,0 +1,14 @@
+
+<!-- Modal used to buy products -->
+<div #parent_container class="product-buy-modal-dialog">
+    <div class="product-buy-modal-header">
+    </div>
+    <div class="product-buy-modal-body">
+        <p class="product-buy-modal-title"> Do you wanna buy it? </p>
+        <input #email_input type="email" placeholder="Email" class="product-buy-modal-input-email" />
+    </div>
+    <div class="product-buy-modal-footer">
+        <button (click)="cancelBuyProduct()" class="product-buy-modal-cancel">CANCEL</button>
+        <button (click)="buyProduct()" class="product-buy-modal-accept">CONFIRM</button>
+    </div>
+</div>
